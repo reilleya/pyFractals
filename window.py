@@ -9,17 +9,22 @@ class Window(QtGui.QWidget):
 		self.resize(320, 240)  
 		self.setWindowTitle("pyFractals")
 		
-		fractWidget = fractalwidget.FractalWidget(self)
+		#fractWidget = fractalwidget.FractalWidget(self)
 		
 		button = QtGui.QPushButton("&Redraw", self)
+		button2 = QtGui.QPushButton("&Test", self)
 
-		
-		hbox = QtGui.QHBoxLayout()
-		hbox.addStretch(1)
-		hbox.addWidget(button)
+		toprow = QtGui.QHBoxLayout()
+		toprow.addStretch(1)
+		toprow.addWidget(button)
+		#hbox.addWidget(fractWidget)
+		secrow = QtGui.QHBoxLayout()
+		secrow.addStretch(1)
+		secrow.addWidget(button2)
 
 		vbox = QtGui.QVBoxLayout()
+		vbox.addLayout(toprow)
 		vbox.addStretch(1)
-		vbox.addLayout(hbox)
+		vbox.addLayout(secrow)
 		
 		self.setLayout(vbox) 
